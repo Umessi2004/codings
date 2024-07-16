@@ -1,0 +1,26 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+th{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 3px solid rgb(0, 0, 0);
+}
+td{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid black;
+}
+a{
+    background-color: aquamarine;
+}
+/* #text{
+    .red{
+        background-color: brown;
+    }
+} */
+#text{
+    background-color: #e2e2ee;/*this has more priority*/
+}
+.red{
+    background-color: aqua;/*class has less priority than ID*/
+}
+/* ID also links to the particular part of the website*/
