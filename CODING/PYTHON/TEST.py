@@ -83,6 +83,13 @@
 # coordinates=(1,2,3)
 # x,y,z=coordinates #this is called unpacking 
 # print(x,y,z)
-str='hello'
-substr='ll'
-print(str[2:2+len(substr):])
+# str='hello'
+# substr='ll'
+# print(str[2:2+len(substr):])
+n=input("enter a number: ")
+print(f"the multiplication table of {n} is: ")
+try:
+    for i in range(1, 11):
+        print(f"{n}x{i}={int(n)*i}")
+except Exception as v: #using try and except in python to handle with errors butifuly :)
+    print(v)
