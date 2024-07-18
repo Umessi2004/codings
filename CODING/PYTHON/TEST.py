@@ -86,10 +86,20 @@
 # str='hello'
 # substr='ll'
 # print(str[2:2+len(substr):])
-n=input("enter a number: ")
-print(f"the multiplication table of {n} is: ")
-try:
-    for i in range(1, 11):
-        print(f"{n}x{i}={int(n)*i}")
-except Exception as v: #using try and except in python to handle with errors butifuly :)
-    print(v)
+# n=input("enter a number: ")
+# print(f"the multiplication table of {n} is: ")
+# try:
+#     for i in range(1, 11):
+#         print(f"{n}x{i}={int(n)*i}")
+# except Exception as v: #using try and except in python to handle with errors butifuly :)
+#     print(v)
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
