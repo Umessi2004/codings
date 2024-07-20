@@ -1,0 +1,15 @@
+meta {
+  name: emp_management
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://127.0.0.1:5000/emp
+  body: json
+  auth: none
+}
+
+body:json {
+  {"id":1211, "name":"Umesh", "age":15, "dept": "CSE"}
+}
