@@ -25,6 +25,15 @@ def get_emp():
         emp_data={'id=':i.id, 'name=':i.name, 'age=':i.age, 'department=':i.department}
         output.append(emp_data)
     return jsonify({'employees:':output})
+
+@employee_bp.route('/emp<int:id>', methods=['GET'])
+def get_empid(id):
+    emp_dat=employee.query.get_or_404(id)
+    # output=[]
+    emp_data={'id': emp_dat.id, 'name':emp_dat.name, 'age':emp_dat.age, 'dept':emp_dat.department}
+    # output.append(emp_data)
+    return jsonify({'particular employee data:': emp_data})
+
 @employee_bp.route('/emp<int:id>', methods=['PUT'])
 def update_emp(id):
     data=request.get_json()
