@@ -1,0 +1,6 @@
+*.json
+*.bru
+*.txt
+venv/
+instance/
+__pycache__/
