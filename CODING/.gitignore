@@ -2,4 +2,6 @@ todo/
 venv/
 instance/
 *.json
-
+x.py
+test.bru
+__pycache___/
