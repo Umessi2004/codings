@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Blueprint
+from flask import Flask, request, jsonify, Blueprint, render_template
 from flask_sqlalchemy import SQLAlchemy
 from .models import employee
 from . import db
@@ -7,7 +7,8 @@ employee_bp=Blueprint('employee_bp', __name__)
 
 @employee_bp.route('/')
 def index():
-    return 'WELCOME TO EMPLOYEE MANAGEMENT SYSTEM'
+    # return 'WELCOME TO EMPLOYEE MANAGEMENT SYSTEM'
+    return render_template('homepage.html')
 
 #route to entetr the employee data 
 @employee_bp.route('/emp', methods=['POST'])
@@ -32,7 +33,8 @@ def get_emp():
         for i in emp_dat:
             emp_data={'id=':i.id, 'name=':i.name, 'age=':i.age, 'department=':i.department}
             output.append(emp_data)
-        return jsonify({'employees:':output})
+        print(output)
+        return jsonify({'employee details': output})
     except Exception as e:
         return jsonify({'error':str(e)}), 500
 
